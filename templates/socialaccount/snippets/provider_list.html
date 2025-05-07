@@ -1,0 +1,84 @@
+{% load socialaccount %}
+{% load static i18n %}
+{% get_providers as socialaccount_providers %}
+
+<div class="social-login-buttons d-flex flex-wrap">
+  {% for provider in socialaccount_providers %}
+    {% if provider.id == "openid" %}
+      {% for brand in provider.get_brands %}
+        <div class="socialaccount-provider {{ provider.id }} {{ brand.id }}">
+          <a title="{{ brand.name }}" 
+             class="btn btn-outline-secondary mb-2 mr-2 social-btn social-btn-{{ brand.id }}"
+             href="{% provider_login_url provider.id openid=brand.openid_url process=process %}">
+            <i class="fab fa-{{ brand.id|lower }} mr-2"></i>
+            {{ brand.name }}
+          </a>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="socialaccount-provider {{ provider.id }}">
+        {% if provider.id == 'google' %}
+          <a class="btn btn-outline-danger mb-2 mr-2 social-btn social-btn-google"
+             href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+            <i class="fab fa-google mr-2"></i>
+            {% if process == "connect" %}
+              {% blocktrans %}Connect with {{ provider.name }}{% endblocktrans %}
+            {% else %}
+              {% blocktrans %}Sign in with {{ provider.name }}{% endblocktrans %}
+            {% endif %}
+          </a>
+        {% elif provider.id == 'facebook' %}
+          <a class="btn btn-outline-primary mb-2 mr-2 social-btn social-btn-facebook"
+             href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+            <i class="fab fa-facebook-f mr-2"></i>
+            {% if process == "connect" %}
+              {% blocktrans %}Connect with {{ provider.name }}{% endblocktrans %}
+            {% else %}
+              {% blocktrans %}Sign in with {{ provider.name }}{% endblocktrans %}
+            {% endif %}
+          </a>
+        {% elif provider.id == 'github' %}
+          <a class="btn btn-outline-dark mb-2 mr-2 social-btn social-btn-github"
+             href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+            <i class="fab fa-github mr-2"></i>
+            {% if process == "connect" %}
+              {% blocktrans %}Connect with {{ provider.name }}{% endblocktrans %}
+            {% else %}
+              {% blocktrans %}Sign in with {{ provider.name }}{% endblocktrans %}
+            {% endif %}
+          </a>
+        {% elif provider.id == 'twitter' %}
+          <a class="btn btn-outline-info mb-2 mr-2 social-btn social-btn-twitter"
+             href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+            <i class="fab fa-twitter mr-2"></i>
+            {% if process == "connect" %}
+              {% blocktrans %}Connect with {{ provider.name }}{% endblocktrans %}
+            {% else %}
+              {% blocktrans %}Sign in with {{ provider.name }}{% endblocktrans %}
+            {% endif %}
+          </a>
+        {% elif provider.id == 'linkedin' %}
+          <a class="btn btn-outline-primary mb-2 mr-2 social-btn social-btn-linkedin"
+             href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+            <i class="fab fa-linkedin-in mr-2"></i>
+            {% if process == "connect" %}
+              {% blocktrans %}Connect with {{ provider.name }}{% endblocktrans %}
+            {% else %}
+              {% blocktrans %}Sign in with {{ provider.name }}{% endblocktrans %}
+            {% endif %}
+          </a>
+        {% else %}
+          <a class="btn btn-outline-secondary mb-2 mr-2 social-btn social-btn-{{ provider.id }}"
+             href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+            <i class="fas fa-sign-in-alt mr-2"></i>
+            {% if process == "connect" %}
+              {% blocktrans %}Connect with {{ provider.name }}{% endblocktrans %}
+            {% else %}
+              {% blocktrans %}Sign in with {{ provider.name }}{% endblocktrans %}
+            {% endif %}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>

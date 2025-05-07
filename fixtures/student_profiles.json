@@ -1,0 +1,146 @@
+[
+  {
+    "model": "accounts.studentprofile",
+    "pk": 23,
+    "fields": {
+      "user": 23,
+      "bio": "Body conference side across candidate collection. Him garden issue health include.\n\nMyself final still its per product. Quickly able against scientist Mr include rise.\n\nHead increase pull too.",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "rachel-gomez",
+      "created_at": "2023-05-02T12:20:39+00:00",
+      "updated_at": "2024-08-21T00:25:53+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 31,
+    "fields": {
+      "user": 31,
+      "bio": "<h2>About Me</h2><p>Sit police performance city. Also bit foot subject receive no.\n\nInteresting main turn all how same.</p><p><strong>My interests include:</strong></p><ul><li>administration</li><li>class</li><li>agent</li><li>seven</li></ul>",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "lisa-gomez",
+      "created_at": "2023-01-03T02:17:03+00:00",
+      "updated_at": "2023-01-03T02:17:03+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 8,
+    "fields": {
+      "user": 8,
+      "bio": "Grow speech his chance character.",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "lori-schmitt",
+      "created_at": "2023-02-05T05:41:55+00:00",
+      "updated_at": "2023-03-21T16:17:06+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 44,
+    "fields": {
+      "user": 44,
+      "bio": "Own there future so them both human. Reflect security always determine rather senior.",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "mark-sanchez",
+      "created_at": "2022-07-09T15:01:46+00:00",
+      "updated_at": "2023-10-19T23:47:17+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 16,
+    "fields": {
+      "user": 16,
+      "bio": "Summer strong help standard our. Alone research arrive well student effect likely. Wind market alone word director.",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "jessica-ellis",
+      "created_at": "2023-03-13T14:54:16+00:00",
+      "updated_at": "2023-03-13T14:54:16+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 43,
+    "fields": {
+      "user": 43,
+      "bio": "<h2>About Me</h2><p>Strong energy rule art maintain option. Especially address vote area.\n\nCharge would yeah any my. Step ball today yard. Second hotel section enough listen deep.</p><p><strong>My interests include:</strong></p><ul><li>light</li><li>subject</li><li>job</li></ul>",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "patrick-johnson",
+      "created_at": "2023-08-05T09:58:47+00:00",
+      "updated_at": "2023-08-05T09:58:47+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 24,
+    "fields": {
+      "user": 24,
+      "bio": "Officer head group above. Purpose understand spend. Employee say single it.",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "douglas-wilson",
+      "created_at": "2024-09-01T02:26:07+00:00",
+      "updated_at": "2024-09-01T02:26:07+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 27,
+    "fields": {
+      "user": 27,
+      "bio": "<h2>About Me</h2><p>Lawyer away energy opportunity sign. Face enough pretty even. Avoid mouth president live.\n\nSound box different discuss sing water. Other detail door that product several piece. Partner process if still medical. Himself term respond list.\n\nPay than but represent them truth coach high. Build learn result.</p><p><strong>My interests include:</strong></p><ul><li>reduce</li><li>agreement</li></ul>",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "sarah-reese",
+      "created_at": "2022-07-20T03:29:30+00:00",
+      "updated_at": "2024-11-07T17:53:58+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 42,
+    "fields": {
+      "user": 42,
+      "bio": "His look crime check she product least debate. General certain degree tonight.\n\nHear moment street sit explain best. Debate number budget movie this.",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "christie-aguilar",
+      "created_at": "2024-06-28T22:57:32+00:00",
+      "updated_at": "2025-02-07T21:21:32+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 18,
+    "fields": {
+      "user": 18,
+      "bio": "Example American through opportunity conference leader decide. Relate assume state.",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "deanna-travis",
+      "created_at": "2023-12-02T07:15:51+00:00",
+      "updated_at": "2023-12-02T07:15:51+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 14,
+    "fields": {
+      "user": 14,
+      "bio": "Institution line green some society run. Himself international special pretty. Tv news per perform month. Region product somebody manager.\n\nFall manager stuff simply leader moment development. Consider magazine career when physical organization new. Culture model ready change. Difference other president few detail community.",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "julie-villegas",
+      "created_at": "2023-05-15T02:08:19+00:00",
+      "updated_at": "2023-05-15T02:08:19+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 41,
+    "fields": {
+      "user": 41,
+      "bio": "<h2>About Me</h2><p>Week history do despite. East exist product. Total market magazine.\n\nLay third itself source ability no people. Reduce one than reason law.\n\nPartner reflect draw reason determine give. More space crime scene common east style. Law five skin star such cut career.</p><p><strong>My interests include:</strong></p><ul><li>store</li><li>participant</li><li>condition</li></ul>",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "lori-bowman",
+      "created_at": "2024-11-18T05:20:10+00:00",
+      "updated_at": "2024-11-18T05:20:10+00:00"
+    }
+  }
+]

@@ -146,7 +146,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']  # For global static files
 STATIC_ROOT = BASE_DIR / 'staticfiles'    # Where collectstatic puts everything
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Media files

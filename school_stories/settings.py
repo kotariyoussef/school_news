@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount',
     
+    'django_extensions',
+    
     'taggit',
     'django_ckeditor_5',
 
@@ -187,7 +189,7 @@ ADMINS = [('Youssef Kotari', os.getenv('ADMIN_EMAIL', 'inginessef@gmail.com'))]
 MANAGERS = [('Yacine', os.getenv('MANAGER_EMAIL', 'inginessef@gmail.com'))]
 
 # django-allauth configuration
-ACCOUNT_EMAIL_VERIFICATION = 'none'  # Force email verification
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
 ACCOUNT_UNIQUE_EMAIL = True

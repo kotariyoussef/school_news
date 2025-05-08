@@ -181,7 +181,7 @@ EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'ko.youssef.public@gmail.com')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'mkumczlmeijtqtus')
 
-DEFAULT_FROM_EMAIL = 'Your App Name <ko.youssef.public@gmail.com>'
+DEFAULT_FROM_EMAIL = 'LBC <ko.youssef.public@gmail.com>'
 EMAIL_SUBJECT_PREFIX = '[LBC] '
 
 SERVER_EMAIL = 'inginessef@gmail.com'
@@ -189,7 +189,7 @@ ADMINS = [('Youssef Kotari', os.getenv('ADMIN_EMAIL', 'inginessef@gmail.com'))]
 MANAGERS = [('Yacine', os.getenv('MANAGER_EMAIL', 'inginessef@gmail.com'))]
 
 # django-allauth configuration
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
 ACCOUNT_UNIQUE_EMAIL = True

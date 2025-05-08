@@ -29,7 +29,11 @@
                 {% for news in news_list %}
                 <div class="col-md-6 mb-4">
                     <div class="card h-100 shadow-sm">
+                        {% if news.featured_image %}
                         <img src="{{ news.featured_image.url }}" class="card-img-top" alt="{{ news.title }}" style="height: 200px; object-fit: cover;">
+                        {% else %}
+                        <img src="{% static 'images/placeholder.jpg' %}" class="card-img-top" alt="{{ news.title }}" style="height: 200px; object-fit: cover;">
+                        {% endif %}
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <span class="badge bg-primary">{{ news.category.name }}</span>

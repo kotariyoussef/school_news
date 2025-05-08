@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from accounts.views import ProfileListView, ProfileDetailView
-from news.views import NewsList
+from news.views import HomePageView
 from news.sitemap import NewsSitemap
 from django.contrib.sitemaps.views import sitemap
 from django.views.decorators.cache import cache_page
@@ -25,7 +25,7 @@ urlpatterns = [
     path('', include("subscription.urls")),
     path('ckeditor5/', include('django_ckeditor_5.urls')),
     path('profiles/', ProfileListView.as_view(), name='profile_list'),
-    path('', NewsList.as_view(), name='home'),
+    path('', HomePageView.as_view(), name='home'),
     path("sitemap.xml", 
             cache_page(86400)(sitemap),
             {"sitemaps": {"news": NewsSitemap}},

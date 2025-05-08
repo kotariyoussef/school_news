@@ -4,7 +4,7 @@ from pathlib import Path
 
 # Paths
 python_exe = r'C:/Users/act08/Documents/tmp ssf/venv/Scripts/python.exe'
-manage_py = r'c:/Users/act08/Documents/tmp ssf/venv/school_newsletter4/manage.py'
+manage_py = r'c:/Users/act08/Documents/tmp ssf/venv/school_news/manage.py'
 fixtures_folder = Path('fixtures')
 
 # Get all .json fixture files
@@ -13,6 +13,22 @@ fixture_files = sorted(fixtures_folder.glob('*.json'))
 if not fixture_files:
     print("No fixture files found.")
     exit(1)
+    
+command = [
+        python_exe,
+        manage_py,
+        'flush'
+    ]
+print(f"\nRunning first: {' '.join(command)}")
+subprocess.run(command)
+
+command = [
+        python_exe,
+        manage_py,
+        'migrate'
+    ]
+print(f"\nThen Running: {' '.join(command)}")
+subprocess.run(command)
 
 # Show list of files with indices
 print("\nAvailable fixture files:")
@@ -26,13 +42,16 @@ print("2. Modification time")
 print("3. Custom order (e.g., 1 5 2 3)")
 
 choice = input("Enter 1, 2, or 3: ").strip()
-
+if not choice:
+    choice = "3"
 if choice == '1':
     sorted_files = sorted(fixture_files, key=lambda f: f.stat().st_ctime)
 elif choice == '2':
     sorted_files = sorted(fixture_files, key=lambda f: f.stat().st_mtime)
 elif choice == '3':
     custom_input = input("Enter space-separated file numbers in desired order: ").strip()
+    if not custom_input:
+        custom_input = "4 2 1 6 5 3"
     try:
         indices = [int(i) for i in custom_input.split()]
         sorted_files = [fixture_files[i - 1] for i in indices if 1 <= i <= len(fixture_files)]

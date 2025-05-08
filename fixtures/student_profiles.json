@@ -1,38 +1,14 @@
 [
   {
     "model": "accounts.studentprofile",
-    "pk": 23,
+    "pk": 47,
     "fields": {
-      "user": 23,
-      "bio": "Body conference side across candidate collection. Him garden issue health include.\n\nMyself final still its per product. Quickly able against scientist Mr include rise.\n\nHead increase pull too.",
+      "user": 47,
+      "bio": "Walk our fact sing do wonder return training. International front concern property mention.",
       "profile_picture": "profile_pictures/default.png",
-      "slug": "rachel-gomez",
-      "created_at": "2023-05-02T12:20:39+00:00",
-      "updated_at": "2024-08-21T00:25:53+00:00"
-    }
-  },
-  {
-    "model": "accounts.studentprofile",
-    "pk": 31,
-    "fields": {
-      "user": 31,
-      "bio": "<h2>About Me</h2><p>Sit police performance city. Also bit foot subject receive no.\n\nInteresting main turn all how same.</p><p><strong>My interests include:</strong></p><ul><li>administration</li><li>class</li><li>agent</li><li>seven</li></ul>",
-      "profile_picture": "profile_pictures/default.png",
-      "slug": "lisa-gomez",
-      "created_at": "2023-01-03T02:17:03+00:00",
-      "updated_at": "2023-01-03T02:17:03+00:00"
-    }
-  },
-  {
-    "model": "accounts.studentprofile",
-    "pk": 8,
-    "fields": {
-      "user": 8,
-      "bio": "Grow speech his chance character.",
-      "profile_picture": "profile_pictures/default.png",
-      "slug": "lori-schmitt",
-      "created_at": "2023-02-05T05:41:55+00:00",
-      "updated_at": "2023-03-21T16:17:06+00:00"
+      "slug": "michelle-williams",
+      "created_at": "2024-08-30T01:07:01+00:00",
+      "updated_at": "2024-08-30T01:07:01+00:00"
     }
   },
   {
@@ -40,47 +16,83 @@
     "pk": 44,
     "fields": {
       "user": 44,
-      "bio": "Own there future so them both human. Reflect security always determine rather senior.",
+      "bio": "<h2>About Me</h2><p>Political sort administration fall rate. Reach value kid parent lay.\n\nMay increase model. She season rock way degree source. Together gun mind store.\n\nRaise change public discussion. Describe sell difficult less nature measure.</p><p><strong>My interests include:</strong></p><ul><li>mouth</li><li>expert</li><li>skill</li><li>act</li></ul>",
       "profile_picture": "profile_pictures/default.png",
-      "slug": "mark-sanchez",
-      "created_at": "2022-07-09T15:01:46+00:00",
-      "updated_at": "2023-10-19T23:47:17+00:00"
+      "slug": "bethany-mitchell",
+      "created_at": "2023-10-06T17:49:53+00:00",
+      "updated_at": "2023-10-06T17:49:53+00:00"
     }
   },
   {
     "model": "accounts.studentprofile",
-    "pk": 16,
+    "pk": 38,
     "fields": {
-      "user": 16,
-      "bio": "Summer strong help standard our. Alone research arrive well student effect likely. Wind market alone word director.",
+      "user": 38,
+      "bio": "Language what country eye rock value yard maybe. Off seven nearly be without red. Network stock catch do recognize anyone.\n\nHistory thought if check. Wonder evening minute. Early his purpose. Cause job although me cut traditional foreign.",
       "profile_picture": "profile_pictures/default.png",
-      "slug": "jessica-ellis",
-      "created_at": "2023-03-13T14:54:16+00:00",
-      "updated_at": "2023-03-13T14:54:16+00:00"
+      "slug": "lisa-parks",
+      "created_at": "2024-06-28T11:50:40+00:00",
+      "updated_at": "2024-06-28T11:50:40+00:00"
     }
   },
   {
     "model": "accounts.studentprofile",
-    "pk": 43,
+    "pk": 12,
     "fields": {
-      "user": 43,
-      "bio": "<h2>About Me</h2><p>Strong energy rule art maintain option. Especially address vote area.\n\nCharge would yeah any my. Step ball today yard. Second hotel section enough listen deep.</p><p><strong>My interests include:</strong></p><ul><li>light</li><li>subject</li><li>job</li></ul>",
+      "user": 12,
+      "bio": "Trade memory born off long administration. Congress head cause everyone. Decade person listen fund expert. Fill read fly collection himself garden.\n\nLaw tonight campaign. Off city yet condition eight party baby become. Without worry still camera.",
       "profile_picture": "profile_pictures/default.png",
-      "slug": "patrick-johnson",
-      "created_at": "2023-08-05T09:58:47+00:00",
-      "updated_at": "2023-08-05T09:58:47+00:00"
+      "slug": "anthony-thomas",
+      "created_at": "2023-10-22T07:35:39+00:00",
+      "updated_at": "2023-10-22T07:35:39+00:00"
     }
   },
   {
     "model": "accounts.studentprofile",
-    "pk": 24,
+    "pk": 9,
     "fields": {
-      "user": 24,
-      "bio": "Officer head group above. Purpose understand spend. Employee say single it.",
+      "user": 9,
+      "bio": "Allow wind age a hour again certain. Project energy hold father rest. Bill buy while scene argue itself.\n\nCare sort station nature. Effect former others. Bad machine head ever.",
       "profile_picture": "profile_pictures/default.png",
-      "slug": "douglas-wilson",
-      "created_at": "2024-09-01T02:26:07+00:00",
-      "updated_at": "2024-09-01T02:26:07+00:00"
+      "slug": "christopher-grant",
+      "created_at": "2023-09-05T02:08:33+00:00",
+      "updated_at": "2023-09-05T02:08:33+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 11,
+    "fields": {
+      "user": 11,
+      "bio": "Tough take look begin reason. Senior trip guess no sense nice rate end.\n\nWin data save positive fund perhaps let. Hit education I possible subject whether leave.",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "justin-crawford",
+      "created_at": "2023-07-24T07:45:45+00:00",
+      "updated_at": "2023-07-24T07:45:45+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 26,
+    "fields": {
+      "user": 26,
+      "bio": "The perhaps born board side professional. Teach conference likely eat partner up. Make treatment his require degree order result similar.\n\nWhen music instead name price foreign. Order food glass security teach arrive.",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "steve-moreno",
+      "created_at": "2023-12-31T22:52:13+00:00",
+      "updated_at": "2023-12-31T22:52:13+00:00"
+    }
+  },
+  {
+    "model": "accounts.studentprofile",
+    "pk": 21,
+    "fields": {
+      "user": 21,
+      "bio": "<h2>About Me</h2><p>Important child pressure. Section bad live whether everything. Too pay star high.\n\nRepresent like buy strategy grow you. Keep strong likely wide see himself. Hour pass if position in value. Office activity yourself he better prove.</p><p><strong>My interests include:</strong></p><ul><li>but</li><li>agree</li></ul>",
+      "profile_picture": "profile_pictures/default.png",
+      "slug": "david-hatfield",
+      "created_at": "2024-01-07T01:18:54+00:00",
+      "updated_at": "2024-12-05T05:46:28+00:00"
     }
   },
   {
@@ -88,35 +100,35 @@
     "pk": 27,
     "fields": {
       "user": 27,
-      "bio": "<h2>About Me</h2><p>Lawyer away energy opportunity sign. Face enough pretty even. Avoid mouth president live.\n\nSound box different discuss sing water. Other detail door that product several piece. Partner process if still medical. Himself term respond list.\n\nPay than but represent them truth coach high. Build learn result.</p><p><strong>My interests include:</strong></p><ul><li>reduce</li><li>agreement</li></ul>",
+      "bio": "Property account network describe coach. Hotel spring crime west skin difficult public whose.",
       "profile_picture": "profile_pictures/default.png",
-      "slug": "sarah-reese",
-      "created_at": "2022-07-20T03:29:30+00:00",
-      "updated_at": "2024-11-07T17:53:58+00:00"
+      "slug": "james-price",
+      "created_at": "2023-03-23T09:25:57+00:00",
+      "updated_at": "2023-03-23T09:25:57+00:00"
     }
   },
   {
     "model": "accounts.studentprofile",
-    "pk": 42,
+    "pk": 31,
     "fields": {
-      "user": 42,
-      "bio": "His look crime check she product least debate. General certain degree tonight.\n\nHear moment street sit explain best. Debate number budget movie this.",
+      "user": 31,
+      "bio": "Return ground those under situation any southern. Box have skill.",
       "profile_picture": "profile_pictures/default.png",
-      "slug": "christie-aguilar",
-      "created_at": "2024-06-28T22:57:32+00:00",
-      "updated_at": "2025-02-07T21:21:32+00:00"
+      "slug": "laura-ramirez",
+      "created_at": "2024-01-07T06:30:11+00:00",
+      "updated_at": "2024-01-07T06:30:11+00:00"
     }
   },
   {
     "model": "accounts.studentprofile",
-    "pk": 18,
+    "pk": 16,
     "fields": {
-      "user": 18,
-      "bio": "Example American through opportunity conference leader decide. Relate assume state.",
+      "user": 16,
+      "bio": "Poor owner religious he husband exactly. Nearly recently fast floor hope really industry. No forget moment police note.\n\nBuild science choice to most draw body. Go like lead design. Per market recognize south inside stop writer.",
       "profile_picture": "profile_pictures/default.png",
-      "slug": "deanna-travis",
-      "created_at": "2023-12-02T07:15:51+00:00",
-      "updated_at": "2023-12-02T07:15:51+00:00"
+      "slug": "brooke-vasquez",
+      "created_at": "2025-05-20T19:54:41+00:00",
+      "updated_at": "2025-05-20T19:54:41+00:00"
     }
   },
   {
@@ -124,23 +136,23 @@
     "pk": 14,
     "fields": {
       "user": 14,
-      "bio": "Institution line green some society run. Himself international special pretty. Tv news per perform month. Region product somebody manager.\n\nFall manager stuff simply leader moment development. Consider magazine career when physical organization new. Culture model ready change. Difference other president few detail community.",
+      "bio": "<h2>About Me</h2><p>Grow stop represent sometimes question. Cut trouble improve identify cell. Deal task generation west year.</p><p><strong>My interests include:</strong></p><ul><li>however</li><li>practice</li></ul>",
       "profile_picture": "profile_pictures/default.png",
-      "slug": "julie-villegas",
-      "created_at": "2023-05-15T02:08:19+00:00",
-      "updated_at": "2023-05-15T02:08:19+00:00"
+      "slug": "jack-harris",
+      "created_at": "2024-12-24T10:38:49+00:00",
+      "updated_at": "2024-12-24T10:38:49+00:00"
     }
   },
   {
     "model": "accounts.studentprofile",
-    "pk": 41,
+    "pk": 33,
     "fields": {
-      "user": 41,
-      "bio": "<h2>About Me</h2><p>Week history do despite. East exist product. Total market magazine.\n\nLay third itself source ability no people. Reduce one than reason law.\n\nPartner reflect draw reason determine give. More space crime scene common east style. Law five skin star such cut career.</p><p><strong>My interests include:</strong></p><ul><li>store</li><li>participant</li><li>condition</li></ul>",
+      "user": 33,
+      "bio": "<h2>About Me</h2><p>Mission pretty I. Write sister these despite young. Get relationship believe court source deal thus ask.\n\nPoor learn bill condition prevent. Yourself item worry make especially must.</p><p><strong>My interests include:</strong></p><ul><li>magazine</li><li>growth</li><li>set</li><li>push</li></ul>",
       "profile_picture": "profile_pictures/default.png",
-      "slug": "lori-bowman",
-      "created_at": "2024-11-18T05:20:10+00:00",
-      "updated_at": "2024-11-18T05:20:10+00:00"
+      "slug": "ariana-ellis",
+      "created_at": "2025-03-08T05:34:15+00:00",
+      "updated_at": "2025-03-08T05:34:15+00:00"
     }
   }
 ]

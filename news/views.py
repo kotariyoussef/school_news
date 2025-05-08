@@ -1,18 +1,282 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.contrib.auth.decorators import login_required
-from django.db.models import Count, Q
+from django.db.models import Count, Q, Prefetch, F
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils import timezone
+
+from accounts.models import StudentProfile
 from .models import News, Category, Comment
 from .forms import CommentForm
 from django.views.decorators.cache import cache_page
 from functools import reduce
 import operator
 
-@cache_page(60*60)
-def home_view(request):    
-    return render(request, 'news/home.html')
+from django.utils.decorators import method_decorator
+from django.core.cache import cache
+from datetime import timedelta
+
+class HomePageView(TemplateView):
+    template_name = "home.html"
+    
+    @method_decorator(cache_page(60 * 15))  # Cache the page for 15 minutes
+    def dispatch(self, *args, **kwargs):
+        """Use Django's built-in cache for entire page"""
+        return super().dispatch(*args, **kwargs)
+    
+    def get_latest_news(self):
+        """Get latest articles with optimized queries"""
+        cache_key = 'latest_news'
+        latest_news = cache.get(cache_key)
+        
+        if not latest_news:
+            # Using select_related to fetch related models in a single query
+            latest_news = News.objects.select_related(
+                'category', 'author', 'author__user'
+            ).filter(
+                status='published', 
+                publish_date__lte=timezone.now()
+            ).only(
+                'id', 'title', 'slug', 'summary', 'featured_image', 
+                'publish_date', 'views', 
+                'author', 'author__user', 'category',
+                'category__name', 
+                'category__slug'
+            ).order_by('-publish_date')[:10]
+            
+            # Calculate comment count efficiently
+            articles_with_comments = News.objects.filter(
+                id__in=[article.id for article in latest_news]
+            ).annotate(
+                comment_count=Count('comments', filter=Q(comments__is_approved=True))
+            ).values('id', 'comment_count')
+            
+            # Create a dictionary for fast lookup
+            comment_counts = {item['id']: item['comment_count'] for item in articles_with_comments}
+            
+            # Add comment count to each article
+            for article in latest_news:
+                article.comment_count = comment_counts.get(article.id, 0)
+            
+            # Cache for 5 minutes
+            cache.set(cache_key, latest_news, 60 * 5)
+        
+        return latest_news
+    
+    def get_featured_articles(self):
+        """Get featured articles"""
+        cache_key = 'featured_articles'
+        featured_articles = cache.get(cache_key)
+        
+        if not featured_articles:
+            featured_articles = News.objects.select_related(
+                'category', 'author', 'author__user'
+            ).filter(
+                is_featured=True,
+                status='published',
+                publish_date__lte=timezone.now()
+            ).only(
+                'id', 'title', 'slug', 'summary', 'featured_image', 
+                'publish_date',
+                'author', 'author__user',
+                'category', 'category__name', 'category__slug'
+            ).order_by('-publish_date')[:3]
+            
+            cache.set(cache_key, featured_articles, 60 * 10)  # Cache for 10 minutes
+        
+        return featured_articles
+    
+    def get_category_articles(self):
+        """Get articles organized by featured categories"""
+        cache_key = 'category_articles'
+        featured_categories = cache.get(cache_key)
+        
+        if not featured_categories:
+            # Get categories that have articles
+            categories = Category.objects.filter(
+                news__status='published',  
+                news__publish_date__lte=timezone.now()
+            ).distinct().only('id', 'name', 'slug')[:6]
+            
+            featured_categories = []
+            for category in categories:
+                # For each category, get the latest 3 articles
+                articles = News.objects.filter(
+                    category=category,
+                    status='published',
+                    publish_date__lte=timezone.now()
+                ).only(
+                    'id', 'title', 'slug', 'featured_image', 'publish_date'
+                ).order_by('-publish_date')[:3]
+                
+                category.articles = list(articles)
+                featured_categories.append(category)
+            
+            cache.set(cache_key, featured_categories, 60 * 15)  # Cache for 15 minutes
+        
+        return featured_categories
+    
+    def get_most_viewed(self):
+        """Get most viewed articles in the last 30 days"""
+        cache_key = 'most_viewed'
+        most_viewed = cache.get(cache_key)
+        
+        if not most_viewed:
+            thirty_days_ago = timezone.now() - timedelta(days=30)
+            
+            most_viewed = News.objects.select_related(
+                'category'
+            ).filter(
+                status='published',
+                publish_date__lte=timezone.now(),
+                publish_date__gte=thirty_days_ago
+            ).only(
+                'id', 'title', 'slug', 'featured_image', 'publish_date', 'views', 'category'
+            ).order_by('-views')[:5]
+            
+            cache.set(cache_key, most_viewed, 60 * 60)  # Cache for 1 hour
+        
+        return most_viewed
+    
+    def get_recent_comments(self):
+        """Get recent comments with related user and article information"""
+        cache_key = 'recent_comments'
+        recent_comments = cache.get(cache_key)
+        
+        if not recent_comments:
+            # Using select_related for optimization
+            recent_comments = Comment.objects.select_related(
+                'user', 'user__profile', 'news'
+            ).filter(
+                is_approved=True
+            ).only(
+                'id', 'content', 'created_at', 
+                'user__first_name', 'user__last_name',
+                'user__profile', 'news__slug'
+            ).order_by('-created_at')[:5]
+        
+            # Add the timesince annotation to each comment object
+            for comment in recent_comments:
+                # Make sure the comment.created_at is timezone-aware
+                comment.created_at = timezone.localtime(comment.created_at)  # Convert to the local timezone
+            
+            cache.set(cache_key, recent_comments, 60 * 5)  # Cache for 5 minutes
+        
+        return recent_comments
+    
+    def get_writers(self):
+        """Get active student profiles for writers"""
+        cache_key = 'active_writers'
+        writers = cache.get(cache_key)
+        
+        if not writers:
+            # Get active writers who have published at least one article
+            writers = StudentProfile.objects.select_related(
+                'user', 'user__profile' 
+            ).filter(
+                user__is_active=True,
+                news_posts__isnull=False,  # Has at least one news post
+                news_posts__status='published'  # Has at least one published post
+            ).distinct().only(
+                'id', 'slug', 'profile_picture', 'bio',
+                'user__first_name', 'user__last_name', 'user__profile' 
+            )[:8]
+            
+            cache.set(cache_key, writers, 60 * 60)  # Cache for 1 hour
+        
+        return writers
+    
+    def get_categories(self):
+        """Get all categories with published articles"""
+        cache_key = 'all_categories'
+        categories = cache.get(cache_key)
+        
+        if not categories:
+            # Only get categories that have published articles
+            categories = Category.objects.filter(
+                news__status='published'
+            ).distinct().order_by('name')
+            
+            cache.set(cache_key, categories, 60 * 60 * 12)  # Cache for 12 hours
+        
+        return categories
+    
+    def get_popular_news(self):
+        """Get popular news for sidebar/footer"""
+        cache_key = 'popular_news'
+        popular_news = cache.get(cache_key)
+        
+        if not popular_news:
+            # Get articles with most comments in the last 7 days
+            seven_days_ago = timezone.now() - timedelta(days=7)
+            
+            popular_news = News.objects.select_related(
+                'category'
+            ).filter(
+                status='published',
+                publish_date__lte=timezone.now(),
+                publish_date__gte=seven_days_ago
+            ).annotate(
+                comment_count=Count('comments', filter=Q(comments__is_approved=True))
+            ).order_by('-comment_count', '-views')[:5]
+            
+            cache.set(cache_key, popular_news, 60 * 30)  # Cache for 30 minutes
+        
+        return popular_news
+    
+    def get_trending_tags(self):
+        """Get trending tags from recent articles"""
+        cache_key = 'trending_tags'
+        trending_tags = cache.get(cache_key)
+        
+        if not trending_tags:
+            # Get commonly used tags from articles in the last 30 days
+            thirty_days_ago = timezone.now() - timedelta(days=30)
+            
+            # Get IDs of recent published articles
+            recent_article_ids = News.objects.filter(
+                status='published',
+                publish_date__lte=timezone.now(),
+                publish_date__gte=thirty_days_ago
+            ).values_list('id', flat=True)
+            
+            # Use the taggit manager to find most common tags
+            from taggit.models import Tag
+            trending_tags = Tag.objects.filter(
+                news__id__in=recent_article_ids
+            ).annotate(
+                num_times=Count('news')
+            ).order_by('-num_times')[:10]
+            
+            cache.set(cache_key, trending_tags, 60 * 60)  # Cache for 1 hour
+        
+        return trending_tags
+    
+    def get_context_data(self, **kwargs):
+        """Prepare and combine all context data"""
+        context = super().get_context_data(**kwargs)
+        
+        # Get latest news first as we'll use it in multiple places
+        latest_news = self.get_latest_news()
+        
+        # Get featured articles
+        featured_articles = self.get_featured_articles()
+        
+        # Prepare context with all required data
+        context.update({
+            'latest_news': latest_news,
+            'featured_article': featured_articles[0] if featured_articles else None,
+            'secondary_featured': featured_articles[1:3] if len(featured_articles) > 1 else [],
+            'categories': self.get_categories(),
+            'featured_categories': self.get_category_articles(),
+            'writers': self.get_writers(),
+            'most_viewed': self.get_most_viewed(),
+            'recent_comments': self.get_recent_comments(),
+            'popular_news': self.get_popular_news(),
+            'trending_tags': self.get_trending_tags(),
+        })
+        
+        return context
 
 # @cache_page(60 * 60)
 class NewsList(ListView):

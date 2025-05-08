@@ -47,6 +47,24 @@
     <link href="{% static "css/style.css" %}" rel="stylesheet">
 
     {% block extra_css %}{% endblock %}
+
+    <style>
+        .hover-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+            transition: all .3s ease;
+        }
+        .card {
+            transition: all .3s ease;
+        }
+        .page-link {
+            color: #007bff;
+        }
+        .badge-light {
+            background-color: #f8f9fa;
+            border: 1px solid #eee;
+        }
+    </style>
 </head>
 
 <body>
@@ -69,12 +87,16 @@
                     <a href="{% url 'news:news_list' %}" class="nav-item nav-link {% active 'news_list' %}">
                         <i class="fas fa-newspaper mr-1"></i>Posts
                     </a>
+                    <a href="{% url 'about' %}" class="nav-item nav-link {% active 'about' %}">
+                        <i class="fas fa-info-circle mr-1"></i>About
+                    </a>
                     <a href="{% url 'profile_list' %}" class="nav-item nav-link {% active 'profile_list' %}">
                         <i class="fas fa-user-friends mr-1"></i>Students
                     </a>
                     <a href="{% url 'contact' %}" class="nav-item nav-link {% active 'contact' %}">
                         <i class="fas fa-envelope mr-1"></i>Contact
                     </a>
+                    
                     {% if user.is_authenticated and user.profile %}
                         <a href="{% url 'dashboard:writer_dashboard' %}" class="nav-item nav-link {% active 'writer_dashboard' %}">
                             <i class="fas fa-pen-nib mr-1"></i>Dashboard
@@ -184,10 +206,6 @@
         </div>
     </div>
     <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary btn-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->

@@ -3,8 +3,8 @@
 *.pyo
 __pycache__/
 
-# Ignore Django migrations (optional; only if you don't want to track them)
-*/migrations/*
+# Ignore Fixtures
+*/fixtures/*
 
 # Ignore the virtual environment
 venv/

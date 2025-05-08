@@ -12,7 +12,7 @@ if not script_files:
     exit(1)
 
 # Run each script
-for script in script_files:
+for script in script_files[:3]:
     print(f"\nRunning {script.name}...")
     result = subprocess.run(['C:/Users/act08/Documents/tmp ssf/venv/Scripts/python.exe', str(script)])
     if result.returncode != 0:

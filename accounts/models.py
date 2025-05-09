@@ -20,7 +20,7 @@ class StudentProfile(models.Model):
     """Student profile model that extends the User model"""
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     bio = CKEditor5Field('Text', blank=True, null=True, config_name='default')
-    profile_picture = models.ImageField(upload_to='profile_pictures/', default='profile_pictures/default.png', blank=True, null=True)
+    profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
     slug = models.SlugField(unique=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

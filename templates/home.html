@@ -264,7 +264,7 @@
             
             {% for comment in recent_comments %}
             <div class="d-flex mb-3 hover-shadow p-2">
-                <img src="{{ comment.user.profile.profile_picture.url|default:'https://via.placeholder.com/100x100' }}" style="width: 45px; height: 45px; object-fit: cover;" class="rounded-circle">
+                <img src="{{ comment.user.profile.profile_picture.url|default:'/static/profile_pictures/default.png' }}" style="width: 45px; height: 45px; object-fit: cover;" class="rounded-circle">
                 <div class="w-100 pl-3">
                     <div class="d-flex justify-content-between">
                         <h6 class="m-0">{{ comment.user.get_full_name }}</h6>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your article reached a milestone!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #9C27B0;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        .milestone {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .milestone-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #9C27B0;
+        }
+        .milestone-text {
+            font-size: 18px;
+            color: #666;
+        }
+        .button {
+            display: inline-block;
+            background-color: #9C27B0;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .stats {
+            background-color: white;
+            border: 1px solid #eee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Your Article Reached a Milestone!</h1>
+    </div>
+    <div class="content">
+        <p>Hello {{ author_name }},</p>
+        
+        <p>We're thrilled to inform you that your article <strong>"{{ article_title }}"</strong> has reached an impressive milestone!</p>
+        
+        <div class="milestone">
+            <div class="milestone-number">{{ milestone }}</div>
+            <div class="milestone-text">Views</div>
+        </div>
+        
+        <div class="stats">
+            <h3 style="margin-top: 0;">Article Performance</h3>
+            <p><strong>Total Views:</strong> {{ views_count }}</p>
+            <p>Your article is among our top-performing content. Keep up the excellent work!</p>
+        </div>
+        
+        <p>This achievement demonstrates that your content resonates with our readers and provides valuable information to our community.</p>
+        
+        <div style="text-align: center;">
+            <a href="{{ article_url }}" class="button">View Your Article</a>
+            <a href="{{ site_url }}/author/analytics/" class="button">View Full Analytics</a>
+        </div>
+        
+        <p>Thank you for your valuable contribution to our platform. We look forward to your future articles!</p>
+        
+        <p>Best regards,<br>The Editorial Team</p>
+    </div>
+    <div class="footer">
+        <p>© {% now "Y" %} Student Newsletter. All rights reserved.</p>
+        <p>If you have any questions, please <a href="{{ site_url }}/contact/">contact us</a>.</p>
+    </div>
+</body>
+</html>

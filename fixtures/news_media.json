@@ -1,0 +1,842 @@
+[
+  {
+    "model": "news.newsmedia",
+    "pk": 1,
+    "fields": {
+      "news": 2,
+      "media_type": "image",
+      "file": "\\yeah-structure-find-hundred-bu-media-1.jpg",
+      "title": "Yeah structure find hundred buy store upon - Technology Update - Image 1",
+      "description": "Resource record election at.",
+      "is_featured": false,
+      "upload_date": "2025-03-21T21:28:24+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 2,
+    "fields": {
+      "news": 2,
+      "media_type": "video",
+      "file": "news/media/yeah-structure-find-hundred-bu-media-2.mp4",
+      "title": "Yeah structure find hundred buy store upon - Technology Update - Video 2",
+      "description": "Wind edge green think.",
+      "is_featured": true,
+      "upload_date": "2025-03-21T21:28:24+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 3,
+    "fields": {
+      "news": 2,
+      "media_type": "image",
+      "file": "\\yeah-structure-find-hundred-bu-media-3.jpg",
+      "title": "Yeah structure find hundred buy store upon - Technology Update - Image 3",
+      "description": "Whole meet campaign it story three.",
+      "is_featured": false,
+      "upload_date": "2025-03-21T21:28:24+00:00",
+      "order": 3
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 4,
+    "fields": {
+      "news": 3,
+      "media_type": "audio",
+      "file": "news/media/board-base-election-energy-ins-media-1.mp3",
+      "title": "Board base election energy inside cut attention - Technology Update - Audio 1",
+      "description": "Population nice sure compare sometimes five.",
+      "is_featured": false,
+      "upload_date": "2025-04-05T19:54:11+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 5,
+    "fields": {
+      "news": 16,
+      "media_type": "document",
+      "file": "news/media/create-industry-despite-these--media-1.docx",
+      "title": "Create industry despite these final rule second - Business Update - Document 1",
+      "description": "Brother baby admit record listen start each character.",
+      "is_featured": false,
+      "upload_date": "2025-02-08T18:21:51+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 6,
+    "fields": {
+      "news": 16,
+      "media_type": "video",
+      "file": "news/media/create-industry-despite-these--media-2.mp4",
+      "title": "Create industry despite these final rule second - Business Update - Video 2",
+      "description": "Officer goal born hot since agent report.",
+      "is_featured": false,
+      "upload_date": "2025-02-08T18:21:51+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 7,
+    "fields": {
+      "news": 16,
+      "media_type": "video",
+      "file": "news/media/create-industry-despite-these--media-3.mov",
+      "title": "Create industry despite these final rule second - Business Update - Video 3",
+      "description": "Behavior about sea should west.",
+      "is_featured": false,
+      "upload_date": "2025-02-08T18:21:51+00:00",
+      "order": 3
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 8,
+    "fields": {
+      "news": 24,
+      "media_type": "document",
+      "file": "news/media/market-little-but-long-agree-s-media-1.docx",
+      "title": "Market little but long agree - Science Update - Document 1",
+      "description": "Majority guess throw low close case.",
+      "is_featured": true,
+      "upload_date": "2025-02-25T04:59:17+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 9,
+    "fields": {
+      "news": 24,
+      "media_type": "document",
+      "file": "news/media/market-little-but-long-agree-s-media-2.docx",
+      "title": "Market little but long agree - Science Update - Document 2",
+      "description": "Plant participant free spring chair military work bed.",
+      "is_featured": false,
+      "upload_date": "2025-02-25T04:59:17+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 10,
+    "fields": {
+      "news": 24,
+      "media_type": "document",
+      "file": "news/media/market-little-but-long-agree-s-media-3.docx",
+      "title": "Market little but long agree - Science Update - Document 3",
+      "description": "Right sea standard born economic.",
+      "is_featured": false,
+      "upload_date": "2025-02-25T04:59:17+00:00",
+      "order": 3
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 11,
+    "fields": {
+      "news": 28,
+      "media_type": "document",
+      "file": "news/media/me-become-responsibility-toget-media-1.docx",
+      "title": "Me become responsibility together thousand ago - Science Update - Document 1",
+      "description": "Once couple involve enter so education agreement.",
+      "is_featured": true,
+      "upload_date": "2025-04-24T21:51:37+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 12,
+    "fields": {
+      "news": 32,
+      "media_type": "document",
+      "file": "news/media/green-one-country-real-electio-media-1.docx",
+      "title": "Green one country real election western born data - Health Update - Document 1",
+      "description": "Raise college evening concern between everyone per.",
+      "is_featured": false,
+      "upload_date": "2025-03-25T11:21:39+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 13,
+    "fields": {
+      "news": 32,
+      "media_type": "image",
+      "file": "\\green-one-country-real-electio-media-2.png",
+      "title": "Green one country real election western born data - Health Update - Image 2",
+      "description": "Take one available eight.",
+      "is_featured": true,
+      "upload_date": "2025-03-25T11:21:39+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 14,
+    "fields": {
+      "news": 36,
+      "media_type": "audio",
+      "file": "news/media/enjoy-economic-popular-relatio-media-1.mp3",
+      "title": "Enjoy economic popular relationship right think fact - Health Update - Audio 1",
+      "description": "True pick age dinner nation.",
+      "is_featured": false,
+      "upload_date": "2025-03-08T11:11:27+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 15,
+    "fields": {
+      "news": 36,
+      "media_type": "document",
+      "file": "news/media/enjoy-economic-popular-relatio-media-2.docx",
+      "title": "Enjoy economic popular relationship right think fact - Health Update - Document 2",
+      "description": "Data hospital this improve growth.",
+      "is_featured": true,
+      "upload_date": "2025-03-08T11:11:27+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 16,
+    "fields": {
+      "news": 39,
+      "media_type": "image",
+      "file": "\\board-west-management-health-u-media-1.png",
+      "title": "Board west management - Health Update - Image 1",
+      "description": "Material far sense learn into.",
+      "is_featured": true,
+      "upload_date": "2025-03-02T20:23:55+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 17,
+    "fields": {
+      "news": 40,
+      "media_type": "image",
+      "file": "\\research-child-within-determin-media-1.png",
+      "title": "Research child within determine animal - Health Update - Image 1",
+      "description": "Hundred clear woman agent stay.",
+      "is_featured": true,
+      "upload_date": "2025-04-27T03:03:54+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 18,
+    "fields": {
+      "news": 40,
+      "media_type": "document",
+      "file": "news/media/research-child-within-determin-media-2.docx",
+      "title": "Research child within determine animal - Health Update - Document 2",
+      "description": "Close few summer send soon coach nice.",
+      "is_featured": false,
+      "upload_date": "2025-04-27T03:03:54+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 19,
+    "fields": {
+      "news": 40,
+      "media_type": "image",
+      "file": "\\research-child-within-determin-media-3.png",
+      "title": "Research child within determine animal - Health Update - Image 3",
+      "description": "Mind front think vote.",
+      "is_featured": true,
+      "upload_date": "2025-04-27T03:03:54+00:00",
+      "order": 3
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 20,
+    "fields": {
+      "news": 42,
+      "media_type": "video",
+      "file": "news/media/notice-southern-serious-design-media-1.mov",
+      "title": "Notice southern serious design - Politics Update - Video 1",
+      "description": "Mean task throughout writer through ready popular media.",
+      "is_featured": false,
+      "upload_date": "2025-04-22T10:57:40+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 21,
+    "fields": {
+      "news": 42,
+      "media_type": "audio",
+      "file": "news/media/notice-southern-serious-design-media-2.mp3",
+      "title": "Notice southern serious design - Politics Update - Audio 2",
+      "description": "Need stage year worry.",
+      "is_featured": false,
+      "upload_date": "2025-04-22T10:57:40+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 22,
+    "fields": {
+      "news": 42,
+      "media_type": "document",
+      "file": "news/media/notice-southern-serious-design-media-3.docx",
+      "title": "Notice southern serious design - Politics Update - Document 3",
+      "description": "Answer significant show maintain opportunity through.",
+      "is_featured": false,
+      "upload_date": "2025-04-22T10:57:40+00:00",
+      "order": 3
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 23,
+    "fields": {
+      "news": 43,
+      "media_type": "image",
+      "file": "\\national-health-event-especial-media-1.jpg",
+      "title": "National health event especially present bed hard - Politics Update - Image 1",
+      "description": "Perform rate team compare claim little scientist represent.",
+      "is_featured": false,
+      "upload_date": "2025-03-31T05:23:05+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 24,
+    "fields": {
+      "news": 43,
+      "media_type": "image",
+      "file": "\\national-health-event-especial-media-2.png",
+      "title": "National health event especially present bed hard - Politics Update - Image 2",
+      "description": "Party modern bit explain better play east.",
+      "is_featured": false,
+      "upload_date": "2025-03-31T05:23:05+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 25,
+    "fields": {
+      "news": 43,
+      "media_type": "document",
+      "file": "news/media/national-health-event-especial-media-3.pdf",
+      "title": "National health event especially present bed hard - Politics Update - Document 3",
+      "description": "Yes least miss information road they.",
+      "is_featured": true,
+      "upload_date": "2025-03-31T05:23:05+00:00",
+      "order": 3
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 26,
+    "fields": {
+      "news": 44,
+      "media_type": "document",
+      "file": "news/media/natural-include-word-often-cou-media-1.docx",
+      "title": "Natural include word often course relate dinner - Politics Update - Document 1",
+      "description": "Conference dog start again.",
+      "is_featured": false,
+      "upload_date": "2025-03-25T10:37:01+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 27,
+    "fields": {
+      "news": 44,
+      "media_type": "image",
+      "file": "\\natural-include-word-often-cou-media-2.jpg",
+      "title": "Natural include word often course relate dinner - Politics Update - Image 2",
+      "description": "Determine success short.",
+      "is_featured": false,
+      "upload_date": "2025-03-25T10:37:01+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 28,
+    "fields": {
+      "news": 44,
+      "media_type": "video",
+      "file": "news/media/natural-include-word-often-cou-media-3.mov",
+      "title": "Natural include word often course relate dinner - Politics Update - Video 3",
+      "description": "Respond stand head fine.",
+      "is_featured": false,
+      "upload_date": "2025-03-25T10:37:01+00:00",
+      "order": 3
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 29,
+    "fields": {
+      "news": 50,
+      "media_type": "audio",
+      "file": "news/media/military-travel-chair-big-poli-media-1.wav",
+      "title": "Military travel chair big - Politics Update - Audio 1",
+      "description": "Past member within all.",
+      "is_featured": true,
+      "upload_date": "2025-03-22T17:58:12+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 30,
+    "fields": {
+      "news": 53,
+      "media_type": "audio",
+      "file": "news/media/despite-hit-generation-couple--media-1.wav",
+      "title": "Despite hit generation couple media how why - Environment Update - Audio 1",
+      "description": "Strong ok ten data.",
+      "is_featured": false,
+      "upload_date": "2025-03-16T04:29:35+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 31,
+    "fields": {
+      "news": 53,
+      "media_type": "document",
+      "file": "news/media/despite-hit-generation-couple--media-2.docx",
+      "title": "Despite hit generation couple media how why - Environment Update - Document 2",
+      "description": "Marriage under strong action someone.",
+      "is_featured": false,
+      "upload_date": "2025-03-16T04:29:35+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 32,
+    "fields": {
+      "news": 55,
+      "media_type": "image",
+      "file": "\\speech-rather-baby-goal-enviro-media-1.jpg",
+      "title": "Speech rather baby goal - Environment Update - Image 1",
+      "description": "Camera play more step nor response.",
+      "is_featured": false,
+      "upload_date": "2025-03-13T20:43:16+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 33,
+    "fields": {
+      "news": 55,
+      "media_type": "audio",
+      "file": "news/media/speech-rather-baby-goal-enviro-media-2.mp3",
+      "title": "Speech rather baby goal - Environment Update - Audio 2",
+      "description": "Ball science animal somebody mission may.",
+      "is_featured": false,
+      "upload_date": "2025-03-13T20:43:16+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 34,
+    "fields": {
+      "news": 55,
+      "media_type": "audio",
+      "file": "news/media/speech-rather-baby-goal-enviro-media-3.wav",
+      "title": "Speech rather baby goal - Environment Update - Audio 3",
+      "description": "Assume attention evening the strategy next pay.",
+      "is_featured": false,
+      "upload_date": "2025-03-13T20:43:16+00:00",
+      "order": 3
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 35,
+    "fields": {
+      "news": 56,
+      "media_type": "audio",
+      "file": "news/media/nor-agreement-statement-some-i-media-1.mp3",
+      "title": "Nor agreement statement some increase our - Environment Update - Audio 1",
+      "description": "Notice son that their reveal firm issue.",
+      "is_featured": false,
+      "upload_date": "2025-03-05T23:16:06+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 36,
+    "fields": {
+      "news": 57,
+      "media_type": "video",
+      "file": "news/media/choose-plan-party-power-lead-g-media-1.mov",
+      "title": "Choose plan party power lead good - Environment Update - Video 1",
+      "description": "News leader mother generation entire.",
+      "is_featured": false,
+      "upload_date": "2025-05-05T11:31:22+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 37,
+    "fields": {
+      "news": 57,
+      "media_type": "audio",
+      "file": "news/media/choose-plan-party-power-lead-g-media-2.mp3",
+      "title": "Choose plan party power lead good - Environment Update - Audio 2",
+      "description": "Tax two brother key side management catch.",
+      "is_featured": false,
+      "upload_date": "2025-05-05T11:31:22+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 38,
+    "fields": {
+      "news": 61,
+      "media_type": "audio",
+      "file": "news/media/western-how-able-seat-recent-w-media-1.mp3",
+      "title": "Western how able seat recent water - Education Update - Audio 1",
+      "description": "Six take summer its want.",
+      "is_featured": false,
+      "upload_date": "2025-04-24T13:30:36+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 39,
+    "fields": {
+      "news": 66,
+      "media_type": "document",
+      "file": "news/media/child-everything-drug-whose-re-media-1.pdf",
+      "title": "Child everything drug whose require decide - Education Update - Document 1",
+      "description": "Cultural course they former.",
+      "is_featured": true,
+      "upload_date": "2025-04-16T21:48:26+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 40,
+    "fields": {
+      "news": 69,
+      "media_type": "video",
+      "file": "news/media/property-painting-drug-matter--media-1.mov",
+      "title": "Property painting drug matter let could - Education Update - Video 1",
+      "description": "Movie big difficult paper sort create near.",
+      "is_featured": false,
+      "upload_date": "2025-04-26T06:19:03+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 41,
+    "fields": {
+      "news": 69,
+      "media_type": "audio",
+      "file": "news/media/property-painting-drug-matter--media-2.mp3",
+      "title": "Property painting drug matter let could - Education Update - Audio 2",
+      "description": "Summer why us per.",
+      "is_featured": true,
+      "upload_date": "2025-04-26T06:19:03+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 42,
+    "fields": {
+      "news": 72,
+      "media_type": "audio",
+      "file": "news/media/rock-agent-down-kind-marriage--media-1.mp3",
+      "title": "Rock agent down kind marriage - Culture Update - Audio 1",
+      "description": "First interest I one plan young candidate.",
+      "is_featured": true,
+      "upload_date": "2025-04-16T00:45:54+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 43,
+    "fields": {
+      "news": 74,
+      "media_type": "image",
+      "file": "\\choose-article-out-available-h-media-1.png",
+      "title": "Choose article out available hear professor - Culture Update - Image 1",
+      "description": "Eat run face music they wrong bit today.",
+      "is_featured": false,
+      "upload_date": "2025-03-14T03:37:44+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 44,
+    "fields": {
+      "news": 74,
+      "media_type": "video",
+      "file": "news/media/choose-article-out-available-h-media-2.mov",
+      "title": "Choose article out available hear professor - Culture Update - Video 2",
+      "description": "Quality price open west despite before.",
+      "is_featured": false,
+      "upload_date": "2025-03-14T03:37:44+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 45,
+    "fields": {
+      "news": 74,
+      "media_type": "document",
+      "file": "news/media/choose-article-out-available-h-media-3.pdf",
+      "title": "Choose article out available hear professor - Culture Update - Document 3",
+      "description": "Whose forget win.",
+      "is_featured": false,
+      "upload_date": "2025-03-14T03:37:44+00:00",
+      "order": 3
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 46,
+    "fields": {
+      "news": 75,
+      "media_type": "image",
+      "file": "\\rate-computer-computer-culture-media-1.jpg",
+      "title": "Rate computer computer - Culture Update - Image 1",
+      "description": "Only prevent glass mouth son deal news.",
+      "is_featured": false,
+      "upload_date": "2025-03-06T05:46:24+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 47,
+    "fields": {
+      "news": 75,
+      "media_type": "image",
+      "file": "\\rate-computer-computer-culture-media-2.png",
+      "title": "Rate computer computer - Culture Update - Image 2",
+      "description": "Step sing country Republican condition pull suggest.",
+      "is_featured": false,
+      "upload_date": "2025-03-06T05:46:24+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 48,
+    "fields": {
+      "news": 79,
+      "media_type": "image",
+      "file": "\\woman-most-himself-girl-pretty-media-1.png",
+      "title": "Woman most himself girl pretty wait - Culture Update - Image 1",
+      "description": "Hold also pass about.",
+      "is_featured": true,
+      "upload_date": "2025-03-04T11:33:55+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 49,
+    "fields": {
+      "news": 80,
+      "media_type": "document",
+      "file": "news/media/positive-security-require-almo-media-1.pdf",
+      "title": "Positive security require almost head - Culture Update - Document 1",
+      "description": "How wrong such everyone Congress cut establish.",
+      "is_featured": true,
+      "upload_date": "2025-05-02T05:34:27+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 50,
+    "fields": {
+      "news": 82,
+      "media_type": "video",
+      "file": "news/media/small-include-federal-poor-uni-media-1.mov",
+      "title": "Small include federal poor unit - Sports Update - Video 1",
+      "description": "Test southern end will large special.",
+      "is_featured": false,
+      "upload_date": "2025-02-21T22:21:22+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 51,
+    "fields": {
+      "news": 86,
+      "media_type": "video",
+      "file": "news/media/customer-hope-loss-who-whom-pe-media-1.mp4",
+      "title": "Customer hope loss who whom person - Sports Update - Video 1",
+      "description": "Too customer successful year surface.",
+      "is_featured": true,
+      "upload_date": "2025-02-18T08:15:18+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 52,
+    "fields": {
+      "news": 86,
+      "media_type": "audio",
+      "file": "news/media/customer-hope-loss-who-whom-pe-media-2.wav",
+      "title": "Customer hope loss who whom person - Sports Update - Audio 2",
+      "description": "Student argue entire mission during ground.",
+      "is_featured": false,
+      "upload_date": "2025-02-18T08:15:18+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 53,
+    "fields": {
+      "news": 86,
+      "media_type": "image",
+      "file": "\\customer-hope-loss-who-whom-pe-media-3.jpg",
+      "title": "Customer hope loss who whom person - Sports Update - Image 3",
+      "description": "Analysis offer important realize.",
+      "is_featured": false,
+      "upload_date": "2025-02-18T08:15:18+00:00",
+      "order": 3
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 54,
+    "fields": {
+      "news": 87,
+      "media_type": "video",
+      "file": "news/media/around-value-parent-goal-prepa-media-1.mov",
+      "title": "Around value parent goal prepare sign - Sports Update - Video 1",
+      "description": "Assume operation big song.",
+      "is_featured": false,
+      "upload_date": "2025-04-23T16:55:20+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 55,
+    "fields": {
+      "news": 88,
+      "media_type": "audio",
+      "file": "news/media/this-pull-carry-sports-update-media-1.wav",
+      "title": "This pull carry - Sports Update - Audio 1",
+      "description": "Raise cause bill officer leg bit.",
+      "is_featured": false,
+      "upload_date": "2025-02-22T11:32:09+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 56,
+    "fields": {
+      "news": 88,
+      "media_type": "video",
+      "file": "news/media/this-pull-carry-sports-update-media-2.mp4",
+      "title": "This pull carry - Sports Update - Video 2",
+      "description": "Fish morning increase agreement take.",
+      "is_featured": true,
+      "upload_date": "2025-02-22T11:32:09+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 57,
+    "fields": {
+      "news": 88,
+      "media_type": "video",
+      "file": "news/media/this-pull-carry-sports-update-media-3.mp4",
+      "title": "This pull carry - Sports Update - Video 3",
+      "description": "Fund after building film general she near know.",
+      "is_featured": false,
+      "upload_date": "2025-02-22T11:32:09+00:00",
+      "order": 3
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 58,
+    "fields": {
+      "news": 90,
+      "media_type": "image",
+      "file": "\\group-above-with-safe-measure--media-1.jpg",
+      "title": "Group above with safe measure - Sports Update - Image 1",
+      "description": "Smile seem class difficult hair more.",
+      "is_featured": true,
+      "upload_date": "2025-03-29T18:20:33+00:00",
+      "order": 1
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 59,
+    "fields": {
+      "news": 90,
+      "media_type": "video",
+      "file": "news/media/group-above-with-safe-measure--media-2.mp4",
+      "title": "Group above with safe measure - Sports Update - Video 2",
+      "description": "Capital purpose bring consumer behind standard.",
+      "is_featured": false,
+      "upload_date": "2025-03-29T18:20:33+00:00",
+      "order": 2
+    }
+  },
+  {
+    "model": "news.newsmedia",
+    "pk": 60,
+    "fields": {
+      "news": 90,
+      "media_type": "document",
+      "file": "news/media/group-above-with-safe-measure--media-3.pdf",
+      "title": "Group above with safe measure - Sports Update - Document 3",
+      "description": "Yard water radio ten organization billion care.",
+      "is_featured": false,
+      "upload_date": "2025-03-29T18:20:33+00:00",
+      "order": 3
+    }
+  }
+]

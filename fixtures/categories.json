@@ -1,0 +1,92 @@
+[
+  {
+    "model": "news.category",
+    "pk": 1,
+    "fields": {
+      "name": "Technology",
+      "slug": "technology",
+      "description": "Latest tech news and innovations",
+      "image": "categories/technology.jpg"
+    }
+  },
+  {
+    "model": "news.category",
+    "pk": 2,
+    "fields": {
+      "name": "Business",
+      "slug": "business",
+      "description": "Business, economy and market updates",
+      "image": "categories/business.jpg"
+    }
+  },
+  {
+    "model": "news.category",
+    "pk": 3,
+    "fields": {
+      "name": "Science",
+      "slug": "science",
+      "description": "Scientific discoveries and research",
+      "image": "categories/science.jpg"
+    }
+  },
+  {
+    "model": "news.category",
+    "pk": 4,
+    "fields": {
+      "name": "Health",
+      "slug": "health",
+      "description": "Health, medicine and wellness news",
+      "image": "categories/health.jpg"
+    }
+  },
+  {
+    "model": "news.category",
+    "pk": 5,
+    "fields": {
+      "name": "Politics",
+      "slug": "politics",
+      "description": "Political news and policy updates",
+      "image": "categories/politics.jpg"
+    }
+  },
+  {
+    "model": "news.category",
+    "pk": 6,
+    "fields": {
+      "name": "Environment",
+      "slug": "environment",
+      "description": "Climate change and environmental news",
+      "image": "categories/environment.jpg"
+    }
+  },
+  {
+    "model": "news.category",
+    "pk": 7,
+    "fields": {
+      "name": "Education",
+      "slug": "education",
+      "description": "Educational trends and academic research",
+      "image": "categories/education.jpg"
+    }
+  },
+  {
+    "model": "news.category",
+    "pk": 8,
+    "fields": {
+      "name": "Culture",
+      "slug": "culture",
+      "description": "Arts, literature and cultural highlights",
+      "image": "categories/culture.jpg"
+    }
+  },
+  {
+    "model": "news.category",
+    "pk": 9,
+    "fields": {
+      "name": "Sports",
+      "slug": "sports",
+      "description": "Sports news and athletic achievements",
+      "image": "categories/sports.jpg"
+    }
+  }
+]

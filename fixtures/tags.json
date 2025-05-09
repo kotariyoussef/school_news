@@ -1,0 +1,234 @@
+[
+  {
+    "model": "taggit.tag",
+    "pk": 1,
+    "fields": {
+      "name": "literature",
+      "slug": "literature"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 2,
+    "fields": {
+      "name": "finance",
+      "slug": "finance"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 3,
+    "fields": {
+      "name": "economy",
+      "slug": "economy"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 4,
+    "fields": {
+      "name": "startups",
+      "slug": "startups"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 5,
+    "fields": {
+      "name": "blockchain",
+      "slug": "blockchain"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 6,
+    "fields": {
+      "name": "art",
+      "slug": "art"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 7,
+    "fields": {
+      "name": "climate",
+      "slug": "climate"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 8,
+    "fields": {
+      "name": "cybersecurity",
+      "slug": "cybersecurity"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 9,
+    "fields": {
+      "name": "world",
+      "slug": "world"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 10,
+    "fields": {
+      "name": "digital",
+      "slug": "digital"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 11,
+    "fields": {
+      "name": "culture",
+      "slug": "culture"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 12,
+    "fields": {
+      "name": "music",
+      "slug": "music"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 13,
+    "fields": {
+      "name": "environment",
+      "slug": "environment"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 14,
+    "fields": {
+      "name": "social media",
+      "slug": "social-media"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 15,
+    "fields": {
+      "name": "local",
+      "slug": "local"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 16,
+    "fields": {
+      "name": "film",
+      "slug": "film"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 17,
+    "fields": {
+      "name": "politics",
+      "slug": "politics"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 18,
+    "fields": {
+      "name": "education",
+      "slug": "education"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 19,
+    "fields": {
+      "name": "health",
+      "slug": "health"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 20,
+    "fields": {
+      "name": "research",
+      "slug": "research"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 21,
+    "fields": {
+      "name": "business",
+      "slug": "business"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 22,
+    "fields": {
+      "name": "sustainability",
+      "slug": "sustainability"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 23,
+    "fields": {
+      "name": "ai",
+      "slug": "ai"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 24,
+    "fields": {
+      "name": "science",
+      "slug": "science"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 25,
+    "fields": {
+      "name": "technology",
+      "slug": "technology"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 26,
+    "fields": {
+      "name": "sports",
+      "slug": "sports"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 27,
+    "fields": {
+      "name": "theater",
+      "slug": "theater"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 28,
+    "fields": {
+      "name": "innovation",
+      "slug": "innovation"
+    }
+  },
+  {
+    "model": "taggit.tag",
+    "pk": 29,
+    "fields": {
+      "name": "machine learning",
+      "slug": "machine-learning"
+    }
+  }
+]

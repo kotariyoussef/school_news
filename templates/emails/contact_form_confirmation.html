@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We've Received Your Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #28a745;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        .message-box {
+            background-color: white;
+            border: 1px solid #eee;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Thanks for Reaching Out</h1>
+    </div>
+    <div class="content">
+        <p>Hi {{ name }},</p>
+        <p>We’ve received your message and will get back to you as soon as possible.</p>
+
+        <div class="message-box">
+            <p><strong>Your Message:</strong></p>
+            <p>{{ message }}</p>
+        </div>
+
+        <p>If you need immediate assistance, feel free to contact us directly at our support email.</p>
+
+        <p>Best regards,<br>The {{ site_url }} Team</p>
+    </div>
+    <div class="footer">
+        <p>You’re receiving this email because you submitted a message through our website’s contact form.</p>
+    </div>
+</body>
+</html>

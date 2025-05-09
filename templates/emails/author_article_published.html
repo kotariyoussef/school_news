@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your article has been published</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        .publication-icon {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 60px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #2196F3;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .tips {
+            background-color: white;
+            border: 1px solid #eee;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Your Article Has Been Published!</h1>
+    </div>
+    <div class="content">
+        <p>Hello {{ author_name }},</p>
+        
+        <p>Congratulations! Your article <strong>"{{ article_title }}"</strong> has been successfully published on our platform.</p>
+        
+        <div class="publication-icon">📝</div>
+        
+        <p>Your article is now live and available for all readers to enjoy. Thank you for your valuable contribution!</p>
+        
+        <div style="text-align: center;">
+            <a href="{{ article_url }}" class="button">View Your Published Article</a>
+        </div>
+        
+        <div class="tips">
+            <h3 style="margin-top: 0;">Next Steps</h3>
+            <ul>
+                <li>Share your article on social media to increase visibility</li>
+                <li>Engage with readers who leave comments</li>
+                <li>Check your author dashboard for article performance</li>
+                <li>Consider writing a follow-up piece on related topics</li>
+            </ul>
+        </div>
+        
+        <p>We look forward to your future contributions to our platform!</p>
+        
+        <p>Best regards,<br>The Editorial Team</p>
+    </div>
+    <div class="footer">
+        <p>© {% now "Y" %} Student Newsletter. All rights reserved.</p>
+        <p>If you have any questions, please <a href="{{ site_url }}/contact/">contact us</a>.</p>
+    </div>
+</body>
+</html>

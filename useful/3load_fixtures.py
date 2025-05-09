@@ -1,74 +1,40 @@
 import os
+import argparse
 import subprocess
-from pathlib import Path
 
-# Paths
-python_exe = r'C:/Users/act08/Documents/tmp ssf/venv/Scripts/python.exe'
-manage_py = r'c:/Users/act08/Documents/tmp ssf/venv/school_news/manage.py'
-fixtures_folder = Path('fixtures')
+def run_loaddata_commands(output_dir, python_path, manage_path):
+    fixtures = [
+        "sites.json",
+        "auth_users.json",
+        "allauth_email.json",
+        "student_requests.json",
+        "student_profiles.json",
+        "categories.json",
+        "tags.json",
+        "news.json",
+        "tagged_items.json",
+        "news_media.json",
+        "comments.json",
+        "contact_messages.json",
+    ]
 
-# Get all .json fixture files
-fixture_files = sorted(fixtures_folder.glob('*.json'))
+    for fixture in fixtures:
+        fixture_path = os.path.join(output_dir, fixture)
+        command = [
+            python_path,
+            manage_path,
+            "loaddata",
+            fixture_path
+        ]
+        print("Running:", " ".join(command))
+        subprocess.run(command, check=True)
 
-if not fixture_files:
-    print("No fixture files found.")
-    exit(1)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Run loaddata scripts with a specific Python and manage.py path.")
+    parser.add_argument("output", help="Path to the directory containing JSON fixtures", default="fixtures")
     
-command = [
-        python_exe,
-        manage_py,
-        'flush'
-    ]
-print(f"\nRunning first: {' '.join(command)}")
-subprocess.run(command)
+    # Hardcoded values (you can make these args if needed)
+    PYTHON_PATH = "C:/Users/act08/Documents/tmp ssf/venv/Scripts/python.exe"
+    MANAGE_PATH = "c:/Users/act08/Documents/tmp ssf/venv/school_news/manage.py"
 
-command = [
-        python_exe,
-        manage_py,
-        'migrate'
-    ]
-print(f"\nThen Running: {' '.join(command)}")
-subprocess.run(command)
-
-# Show list of files with indices
-print("\nAvailable fixture files:")
-for idx, f in enumerate(fixture_files, start=1):
-    print(f"{idx}. {f.name}")
-
-# Ask user for the sorting method
-print("\nHow would you like to order the fixture files?")
-print("1. Creation time")
-print("2. Modification time")
-print("3. Custom order (e.g., 1 5 2 3)")
-
-choice = input("Enter 1, 2, or 3: ").strip()
-if not choice:
-    choice = "3"
-if choice == '1':
-    sorted_files = sorted(fixture_files, key=lambda f: f.stat().st_ctime)
-elif choice == '2':
-    sorted_files = sorted(fixture_files, key=lambda f: f.stat().st_mtime)
-elif choice == '3':
-    custom_input = input("Enter space-separated file numbers in desired order: ").strip()
-    if not custom_input:
-        custom_input = "4 2 1 6 5 3"
-    try:
-        indices = [int(i) for i in custom_input.split()]
-        sorted_files = [fixture_files[i - 1] for i in indices if 1 <= i <= len(fixture_files)]
-    except ValueError:
-        print("Invalid input. Please enter space-separated numbers.")
-        exit(1)
-else:
-    print("Invalid choice. Exiting.")
-    exit(1)
-
-# Run loaddata for each selected file
-for fixture_file in sorted_files:
-    command = [
-        python_exe,
-        manage_py,
-        'loaddata',
-        str(fixture_file)
-    ]
-    print(f"\nRunning: {' '.join(command)}")
-    subprocess.run(command)
+    run_loaddata_commands(parser.parse_args().output, PYTHON_PATH, MANAGE_PATH)

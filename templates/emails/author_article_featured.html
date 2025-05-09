@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your article has been featured!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #FF9800;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        .featured-badge {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .featured-badge img {
+            width: 100px;
+        }
+        .featured-badge-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF9800;
+            margin: 10px 0;
+        }
+        .button {
+            display: inline-block;
+            background-color: #FF9800;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Congratulations! Your Article Has Been Featured</h1>
+    </div>
+    <div class="content">
+        <p>Hello {{ author_name }},</p>
+        
+        <p>We're excited to inform you that your article <strong>"{{ article_title }}"</strong> has been selected as a featured article on our platform!</p>
+        
+        <div class="featured-badge">
+            <div style="font-size: 60px;">🏆</div>
+            <div class="featured-badge-text">FEATURED ARTICLE</div>
+        </div>
+        
+        <p>This means your article will receive prominent placement on our homepage and will be highlighted in our featured section, giving it increased visibility to our readers.</p>
+        
+        <p>Our editorial team selected your article based on its quality, relevance, and reader engagement. Keep up the excellent work!</p>
+        
+        <div style="text-align: center;">
+            <a href="{{ article_url }}" class="button">View Your Featured Article</a>
+        </div>
+        
+        <p>Thank you for your valuable contribution to our platform!</p>
+        
+        <p>Best regards,<br>The Editorial Team</p>
+    </div>
+    <div class="footer">
+        <p>© {% now "Y" %} Student Newsletter. All rights reserved.</p>
+        <p>If you have any questions, please <a href="{{ site_url }}/contact/">contact us</a>.</p>
+    </div>
+</body>
+</html>

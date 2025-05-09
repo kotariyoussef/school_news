@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response to your feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #009688;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        .message-box {
+            background-color: white;
+            border: 1px solid #eee;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .original-feedback {
+            background-color: #f0f0f0;
+            border-left: 4px solid #009688;
+            padding: 10px 15px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        .response {
+            background-color: #e8f5f3;
+            border-left: 4px solid #009688;
+            padding: 10px 15px;
+            margin: 10px 0;
+        }
+        .button {
+            display: inline-block;
+            background-color: #009688;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Response to Your Feedback</h1>
+    </div>
+    <div class="content">
+        <p>Thank you for your feedback on our article <strong>"{{ article_title }}"</strong>. We appreciate your input!</p>
+        
+        <div class="message-box">
+            <h3 style="margin-top: 0;">Your Original Feedback</h3>
+            <div class="original-feedback">
+                <p>{{ feedback_text }}</p>
+            </div>
+            
+            <h3>Our Response</h3>
+            <div class="response">
+                <p>{{ response_text }}</p>
+            </div>
+        </div>
+        
+        <p>We value your engagement with our content and hope you continue to read and provide feedback on our articles.</p>
+        
+        <div style="text-align: center;">
+            <a href="{{ article_url }}" class="button">Return to Article</a>
+        </div>
+        
+        <p>Thank you for being a valued reader!</p>
+        
+        <p>Best regards,<br>The Editorial Team</p>
+    </div>
+    <div class="footer">
+        <p>© {% now "Y" %} Student Newsletter. All rights reserved.</p>
+        <p>If you have any further questions, please <a href="{{ site_url }}/contact/">contact us</a>.</p>
+    </div>
+</body>
+</html>

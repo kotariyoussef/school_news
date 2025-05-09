@@ -1,0 +1,74 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ subject }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #0066cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        .announcement {
+            background-color: white;
+            border: 1px solid #eee;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ subject }}</h1>
+    </div>
+    <div class="content">
+        <div class="announcement">
+            {{ content|safe }}
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="{{ site_url }}" class="button">Visit Our Website</a>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© {{ current_year }} Student Newsletter. All rights reserved.</p>
+        <p>If you no longer wish to receive these emails, you can <a href="{{ site_url }}/unsubscribe/">unsubscribe here</a>.</p>
+    </div>
+</body>
+</html>

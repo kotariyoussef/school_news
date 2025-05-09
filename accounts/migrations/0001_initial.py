@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('bio', django_ckeditor_5.fields.CKEditor5Field(blank=True, null=True, verbose_name='Text')),
-                ('profile_picture', models.ImageField(blank=True, default='profile_pictures/default.png', null=True, upload_to='profile_pictures/')),
+                ('profile_picture', models.ImageField(blank=True, null=True, upload_to='profile_pictures/')),
                 ('slug', models.SlugField(blank=True, unique=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),

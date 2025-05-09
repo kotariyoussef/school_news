@@ -82,6 +82,15 @@ CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 600  # 10 minutes
 CACHE_MIDDLEWARE_KEY_PREFIX = 'lbc'
 
+CSRF_COOKIE_SECURE = True  # Use secure cookies only if your app is using HTTPS
+CSRF_COOKIE_HTTPONLY = True  # Prevent JavaScript from accessing the CSRF cookie
+CSRF_COOKIE_SAMESITE = 'Lax'  # Helps with CSRF in cross-site scenarios (can also be 'Strict' or 'None')
+CSRF_TRUSTED_ORIGINS = [
+    'https://schoolnews-production.up.railway.app',  # Your production domain
+]
+CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
+
+
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ROOT_URLCONF = 'school_stories.urls'

@@ -34,7 +34,7 @@ if __name__ == "__main__":
     parser.add_argument("output", help="Path to the directory containing JSON fixtures", default="fixtures")
     
     # Hardcoded values (you can make these args if needed)
-    PYTHON_PATH = "C:/Users/act08/Documents/tmp ssf/venv/Scripts/python.exe"
-    MANAGE_PATH = "c:/Users/act08/Documents/tmp ssf/venv/school_news/manage.py"
+    PYTHON_PATH = "python"
+    MANAGE_PATH = "manage.py"
 
     run_loaddata_commands(parser.parse_args().output, PYTHON_PATH, MANAGE_PATH)

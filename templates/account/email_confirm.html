@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load account %}
+
+{% block title %}{% trans "Confirm Email Address" %}{% endblock %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+          <h2 class="h4 mb-0">{% trans "Confirm Email Address" %}</h2>
+        </div>
+        <div class="card-body text-center py-5">
+          {% user_display email_address.user as user_display %}
+          
+          {% if confirmation %}
+            {% with confirmation.email_address.email as email %}
+            <p class="lead mb-4">
+              {% blocktrans %}
+                Please confirm that <strong>{{ email }}</strong> is an email address for user <strong>{{ user_display }}</strong>.
+              {% endblocktrans %}
+            </p>
+            
+            <form id="confirmation-form" method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+              {% csrf_token %}
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg" id="confirm-btn">
+                  <i class="fas fa-check-circle"></i> {% trans 'Confirm' %}
+                </button>
+              </div>
+            </form>
+            {% endwith %}
+          {% else %}
+            <div class="alert alert-danger mt-4">
+              {% url 'account_email' as email_url %}
+              <p>{% blocktrans %}This confirmation link has expired or is invalid. Please <a href="{{ email_url }}">request a new confirmation email</a>.{% endblocktrans %}</p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- JavaScript to auto-click the confirmation button -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Check if the confirmation exists before auto-clicking the button
+    {% if confirmation %}
+      // Wait for 1 second before auto-clicking for a smoother UX
+      setTimeout(function() {
+        document.getElementById('confirm-btn').click();
+      }, 1000);  // Delay in milliseconds (1000ms = 1 second)
+    {% endif %}
+  });
+</script>
+
+{% endblock %}

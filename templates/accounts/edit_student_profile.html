@@ -9,15 +9,47 @@
     .ck-editor__editable_inline {
         min-height: 200px;
     }
+    .profile-preview-container {
+        position: relative;
+        width: 150px;
+        height: 150px;
+    }
+
     .profile-pic-preview {
         width: 150px;
         height: 150px;
         object-fit: cover;
-        border-radius: 50%;
-        border: 2px solid #efefef;
+        border: 3px solid #e9ecef;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .custom-file-label::after {
-        content: "Browse";
+
+    .remove-image-btn {
+        top: 0;
+        right: 0;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(25%, -25%);
+    }
+
+    .upload-drop-zone {
+        border: 2px dashed #ccc;
+        transition: all 0.3s ease;
+    }
+
+    .upload-drop-zone:hover,
+    .upload-drop-zone.drag-over {
+        border-color: #007bff;
+        background-color: rgba(0, 123, 255, 0.05);
+    }
+
+    .custom-file {
+        width: 200px;
+        margin: 0 auto;
     }
 </style>
 {% endblock %}
@@ -46,57 +78,103 @@
                 <div class="row">
                     <!-- Left Column - Profile Picture -->
                     <div class="col-lg-4 mb-4">
-                        <div class="card border-0 shadow-sm">
-                            <div class="card-body text-center">
-                                <h5 class="font-weight-bold text-primary mb-3">Profile Picture</h5>
-                                
-                                <div class="mb-3">
-                                    {% if form.instance.profile_picture %}
-                                        <img src="{{ form.instance.profile_picture.url }}" alt="{{ form.instance.full_name }}" 
-                                             class="profile-pic-preview mb-3" id="profilePicPreview">
-                                    {% else %}
-                                        <div class="bg-light profile-pic-preview d-flex align-items-center justify-content-center mx-auto mb-3" id="profilePicPreviewPlaceholder">
-                                            <i class="fas fa-user fa-4x text-secondary"></i>
-                                        </div>
-                                        <img src="" alt="Profile Preview" class="profile-pic-preview mb-3 d-none" id="profilePicPreview">
-                                    {% endif %}
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="font-weight-bold text-primary mb-3">Profile Picture</h5>
+                            
+                            <!-- Enhanced Profile Picture Upload Section -->
+                            <div class="upload-drop-zone rounded p-4 mb-3" id="drop-zone">
+                                <!-- Profile Picture Preview -->
+                                <div class="position-relative mb-3">
+                                    <div class="profile-preview-container mx-auto">
+                                        {% if form.instance.profile_picture %}
+                                            <img src="{{ form.instance.profile_picture.url }}" 
+                                                 alt="{{ form.instance.full_name }}" 
+                                                 class="profile-pic-preview rounded-circle" 
+                                                 id="profilePicPreview">
+                                            <button type="button" class="btn btn-sm btn-danger position-absolute remove-image-btn" 
+                                                    id="removeImageBtn" style="display:block;">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        {% else %}
+                                            <div class="bg-light profile-pic-preview rounded-circle d-flex align-items-center justify-content-center mx-auto" 
+                                                 id="profilePicPreviewPlaceholder">
+                                                <i class="fas fa-user fa-3x text-secondary"></i>
+                                            </div>
+                                            <img src="" 
+                                                 alt="Profile Preview" 
+                                                 class="profile-pic-preview rounded-circle d-none" 
+                                                 id="profilePicPreview">
+                                            <button type="button" class="btn btn-sm btn-danger position-absolute remove-image-btn" 
+                                                    id="removeImageBtn" style="display:none;">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        {% endif %}
+                                    </div>
                                 </div>
                                 
+                                <div class="d-flex flex-column align-items-center">
+                                    <i class="fas fa-cloud-upload-alt fa-2x mb-2 text-primary"></i>
+                                    <p class="mb-1">Drag and drop your image here</p>
+                                    <p class="text-muted small">- or -</p>
+                                </div>
+                                
+                                <!-- Hidden File Input -->
                                 <div class="custom-file">
                                     {{ form.profile_picture }}
                                     <label class="custom-file-label" for="{{ form.profile_picture.id_for_label }}">
                                         Choose file
                                     </label>
                                 </div>
-                                {% if form.profile_picture.errors %}
+                            </div>
+                            
+                            <!-- Validation Feedback -->
+                            {% if form.profile_picture.errors %}
+                                <div class="alert alert-danger" role="alert">
+                                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                                    {{ form.profile_picture.errors }}
+                                </div>
+                            {% endif %}
+                            
+                            <!-- Help Text -->
+                            <div class="text-muted small mt-2 mb-3">
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-info-circle mr-1"></i> Recommended size: 500x500 pixels</li>
+                                    <li><i class="fas fa-exclamation-circle mr-1"></i> Max size: 2MB</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Upload Progress -->
+                            <div class="progress mt-2 mb-3 d-none" id="uploadProgress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                     role="progressbar" 
+                                     aria-valuenow="0" 
+                                     aria-valuemin="0" 
+                                     aria-valuemax="100" 
+                                     style="width: 0%">0%</div>
+                            </div>
+                            
+                            <!-- Profile URL Section - Preserved from original -->
+                            <div class="mt-4">
+                                <h6 class="font-weight-bold text-primary">Profile URL</h6>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-link"></i></span>
+                                    </div>
+                                    {{ form.slug|add_class:"form-control bg-light" }}
+                                </div>
+                                {% if form.slug.errors %}
                                     <div class="text-danger mt-1">
-                                        {{ form.profile_picture.errors }}
+                                        {{ form.slug.errors }}
                                     </div>
                                 {% endif %}
-                                <small class="form-text text-muted mt-2">
-                                    Recommended size: 500x500 pixels. Max size: 2MB
+                                <small class="form-text text-muted">
+                                    Custom URL for your profile page
                                 </small>
-                                
-                                <div class="mt-4">
-                                    <h6 class="font-weight-bold text-primary">Profile URL</h6>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-link"></i></span>
-                                        </div>
-                                        {{ form.slug|add_class:"form-control bg-light" }}
-                                    </div>
-                                    {% if form.slug.errors %}
-                                        <div class="text-danger mt-1">
-                                            {{ form.slug.errors }}
-                                        </div>
-                                    {% endif %}
-                                    <small class="form-text text-muted">
-                                        Custom URL for your profile page
-                                    </small>
-                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
                     
                     <!-- Right Column - Profile Details -->
                     <div class="col-lg-8">
@@ -186,39 +264,140 @@
         document.getElementById("{{ form.first_name.id_for_label }}").value = "{{ first_name|escapejs }}";
         document.getElementById("{{ form.last_name.id_for_label }}").value = "{{ last_name|escapejs }}";
         
-        const profilePicInput = document.getElementById('{{ form.profile_picture.id_for_label }}');
-        const profilePicPreview = document.getElementById('profilePicPreview');
-        const profilePicPlaceholder = document.getElementById('profilePicPreviewPlaceholder');
+        // Elements
+        const fileInput = document.getElementById('{{ form.profile_picture.id_for_label }}');
+        const preview = document.getElementById('profilePicPreview');
+        const placeholder = document.getElementById('profilePicPreviewPlaceholder');
+        const removeBtn = document.getElementById('removeImageBtn');
+        const dropZone = document.getElementById('drop-zone');
         const fileLabel = document.querySelector('.custom-file-label');
+        const progressBar = document.getElementById('uploadProgress');
         
-        if (profilePicInput) {
-            profilePicInput.addEventListener('change', function() {
-                if (this.files && this.files[0]) {
-                    const file = this.files[0];
-                    const reader = new FileReader();
-                    
-                    reader.onload = function(e) {
-                        profilePicPreview.src = e.target.result;
-                        profilePicPreview.classList.remove('d-none');
-                        if (profilePicPlaceholder) {
-                            profilePicPlaceholder.classList.add('d-none');
-                        }
-                    };
-                    
-                    reader.readAsDataURL(file);
-                    fileLabel.textContent = file.name;
-                }
+        // Show preview when file is selected
+        fileInput.addEventListener('change', function(e) {
+            handleFileSelect(e.target.files[0]);
+        });
+    
+        // Remove image button
+        if (removeBtn) {
+            removeBtn.addEventListener('click', function() {
+                resetFileInput();
             });
         }
-        
-        // Bootstrap custom file input
-        document.querySelectorAll('.custom-file input').forEach(input => {
-            input.addEventListener('change', function(e) {
-                const fileName = this.files[0]?.name || 'Choose file';
-                const nextSibling = this.nextElementSibling;
-                nextSibling.innerText = fileName;
-            });
+    
+        // Drag & Drop functionality
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, preventDefaults, false);
         });
+    
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, function() {
+                dropZone.classList.add('drag-over');
+            }, false);
+        });
+    
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, function() {
+                dropZone.classList.remove('drag-over');
+            }, false);
+        });
+    
+        dropZone.addEventListener('drop', function(e) {
+            const files = e.dataTransfer.files;
+            if (files.length) {
+                handleFileSelect(files[0]);
+            }
+        }, false);
+    
+        // File handling function
+        function handleFileSelect(file) {
+            if (!file) return;
+            
+            // File size validation (2MB = 2 * 1024 * 1024)
+            if (file.size > 2 * 1024 * 1024) {
+                showError('File size exceeds 2MB limit');
+                resetFileInput();
+                return;
+            }
+    
+            // File type validation
+            if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
+                showError('Only JPG, PNG and GIF formats are supported');
+                resetFileInput();
+                return;
+            }
+    
+            // Update file label
+            fileLabel.textContent = file.name;
+            
+            // Show file preview
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.classList.remove('d-none');
+                if (placeholder) placeholder.classList.add('d-none');
+                removeBtn.style.display = 'block';
+                
+                // Simulate upload progress (for demo purposes)
+                simulateUploadProgress();
+            };
+            reader.readAsDataURL(file);
+        }
+    
+        function resetFileInput() {
+            fileInput.value = '';
+            fileLabel.textContent = 'Choose file';
+            preview.src = '';
+            preview.classList.add('d-none');
+            if (placeholder) placeholder.classList.remove('d-none');
+            removeBtn.style.display = 'none';
+            progressBar.classList.add('d-none');
+        }
+    
+        function showError(message) {
+            // Create error alert if it doesn't exist
+            let errorAlert = document.querySelector('.upload-error-alert');
+            if (!errorAlert) {
+                errorAlert = document.createElement('div');
+                errorAlert.className = 'alert alert-danger upload-error-alert mt-3';
+                errorAlert.role = 'alert';
+                dropZone.parentNode.insertBefore(errorAlert, dropZone.nextSibling);
+            }
+            
+            errorAlert.innerHTML = `<i class="fas fa-exclamation-triangle mr-2"></i>${message}`;
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                errorAlert.remove();
+            }, 5000);
+        }
+        
+        function simulateUploadProgress() {
+            // Show progress bar
+            progressBar.classList.remove('d-none');
+            const bar = progressBar.querySelector('.progress-bar');
+            let width = 0;
+            
+            const interval = setInterval(function() {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        progressBar.classList.add('d-none');
+                    }, 500);
+                } else {
+                    width += 5;
+                    bar.style.width = width + '%';
+                    bar.setAttribute('aria-valuenow', width);
+                    bar.textContent = width + '%';
+                }
+            }, 50);
+        }
     });
+</script>
 </script>
 {% endblock %}

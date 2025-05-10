@@ -103,8 +103,8 @@ def edit_student_profile(request):
         form = StudentProfileForm(instance=profile)
     
     return render(request, 'accounts/edit_student_profile.html', {'form': form,
-            "last_name": request.user.first_name,
-            "first_name": request.user.last_name,})
+            "first_name": request.user.first_name,
+            "last_name": request.user.last_name,})
 
 class ProfileListView(ListView):
     model = StudentProfile
